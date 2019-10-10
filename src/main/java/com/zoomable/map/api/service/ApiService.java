@@ -166,7 +166,7 @@ public class ApiService {
 			query.addCriteria(Criteria.where("MaterialNo").is(materialNo));
 		}
 		
-			query.with(Sort.by(Sort.Direction.DESC, "value"));
+		query.with(Sort.by(Sort.Direction.DESC, "value"));
 		
 		query.limit(limit);
 		

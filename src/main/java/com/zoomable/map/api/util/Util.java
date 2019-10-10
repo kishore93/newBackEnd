@@ -17,58 +17,48 @@ public class Util {
 			boolean obsoleteValue) {
 		
 		Query query = new Query();
-				
-		Criteria excessCriteria = new Criteria();
 		
-
-		Criteria excess30 = new Criteria();
-		Criteria excess60 = new Criteria();
-		Criteria excess90 = new Criteria();
+		Criteria globalCriteria = new Criteria();
 		
-		if(excessQty30Days) {
-						
-			excess30 = Criteria.where("ExcessQty30Days").gt(0);
-			
-			//query.addCriteria(Criteria.where("ExcessQty30Days").gt(0));
-		}
+		//Excess quantity related
+		Criteria excessQtyCriteria = new Criteria();
 		
-		if(excessQty60Days) {
-			
-			excess60 = Criteria.where("ExcessQty60Days").gt(0);
-			
-			//query.addCriteria(Criteria.where("ExcessQty60Days").gt(0));
-		}
+		Criteria excessQty30 = new Criteria();
+		Criteria excessQty60 = new Criteria();
+		Criteria excessQty90 = new Criteria();
 		
-		if(excessQty90Days) {
-			
-			excess90 = Criteria.where("ExcessQty90Days").gt(0);
-			
-			//query.addCriteria(Criteria.where("ExcessQty90Days").gt(0));
-		}
+		if(excessQty30Days) { excessQty30 = Criteria.where("ExcessQty30Days").gt(0); }
+		if(excessQty60Days) { excessQty60 = Criteria.where("ExcessQty60Days").gt(0); }
+		if(excessQty90Days) { excessQty90 = Criteria.where("ExcessQty90Days").gt(0); }
 		
-		excessCriteria.orOperator(excess30,excess60,excess90);
+		excessQtyCriteria.orOperator(excessQty30,excessQty60,excessQty90);
 		
-		query.addCriteria(excessCriteria);
+		//Excess value related
+		Criteria excessValueCriteria = new Criteria();
 		
-		if(excessValue30Days) {
-			query.addCriteria(Criteria.where("ExcessValue30Days").gt(0));
-		}
+		Criteria excessValue30 = new Criteria();
+		Criteria excessValue60 = new Criteria();
+		Criteria excessValue90 = new Criteria();
 		
-		if(excessValue60Days) {
-			query.addCriteria(Criteria.where("ExcessValue60Days").gt(0));
-		}
+		if(excessValue30Days) {	excessValue30 = Criteria.where("ExcessValue30Days").gt(0); }
+		if(excessValue60Days) {	excessValue60 = Criteria.where("ExcessValue60Days").gt(0); }
+		if(excessValue90Days) {	excessValue90 = Criteria.where("ExcessValue90Days").gt(0); }
 		
-		if(excessValue90Days) {
-			query.addCriteria(Criteria.where("ExcessValue90Days").gt(0));
-		}
+		excessValueCriteria.orOperator(excessValue30,excessValue60,excessValue90);
 		
-		if(obsoleteQty) {
-			query.addCriteria(Criteria.where("ObsoleteQty").gt(0));
-		}
+		//Obsolete quantity related
+		Criteria obsoleteQtyCriteria = new Criteria();
 		
-		if(obsoleteValue) {
-			query.addCriteria(Criteria.where("ObsoleteValue").gt(0));
-		}
+		if(obsoleteQty) { obsoleteQtyCriteria = Criteria.where("ObsoleteQty").gt(0); }
+		
+		//Obsolete value related
+		Criteria obsoleteValueCriteria = new Criteria();
+		
+		if(obsoleteValue) {	obsoleteValueCriteria = Criteria.where("ObsoleteValue").gt(0); }
+		
+		globalCriteria.andOperator(excessQtyCriteria, excessValueCriteria, obsoleteQtyCriteria, obsoleteValueCriteria);
+		
+		query.addCriteria(globalCriteria);
 		
 		return query;
 	}
