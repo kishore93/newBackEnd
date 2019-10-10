@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: osdm-spring-boot-app
+  profiles:
+    active: local
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, loggers, beans
+---
+spring:
+  profile: local  data:    mongodb:
+      database: OSDM
+      uri: mongodb+srv://osdmrwuser:FsVfSuiP6RYccKoN@odsm-2qvoc.mongodb.net/OSDM?retryWrites=true&w=majority
+server:  port: 9100
+---
+spring:
+  profile: dev
+  data:
+    mongodb:
+      database: OSDM
+      uri: mongodb+srv://osdmrwuser:FsVfSuiP6RYccKoN@odsm-2qvoc.mongodb.net/OSDM?retryWrites=true&w=majority
+server:
+  port: 9100
