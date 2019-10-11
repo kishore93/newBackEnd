@@ -2,7 +2,10 @@ package com.zoomable.map.api.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +26,7 @@ public class ApiController {
 	/*@Qualifier("apiRepositoryImpl")
 	@Autowired
 	private ApiRepository repository;*/
-
+	
 	@GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE, params = {"region", "state", "plantCode",
 			"materialNo", "excessQty30Days", "excessQty60Days", "excessQty90Days", "excessValue30Days", "excessValue60Days", "excessValue90Days",
 			"obsoleteQty", "obsoleteValue" })
@@ -39,8 +42,10 @@ public class ApiController {
 			@RequestParam(value = "excessValue60Days", required = false, defaultValue = "false") boolean excessValue60Days,
 			@RequestParam(value = "excessValue90Days", required = false, defaultValue = "false") boolean excessValue90Days,
 			@RequestParam(value = "obsoleteQty", required = false, defaultValue = "false") boolean obsoleteQty,
-			@RequestParam(value = "obsoleteValue", required = false, defaultValue = "false") boolean obsoleteValue
+			@RequestParam(value = "obsoleteValue", required = false, defaultValue = "false") boolean obsoleteValue,
+			HttpServletResponse response
 			) {
+		response.setStatus(HttpStatus.OK.value());
 		return service.find(region, state, plantCode, materialNo, excessQty30Days, excessQty60Days, excessQty90Days, excessValue30Days,
 				excessValue60Days, excessValue90Days, obsoleteQty, obsoleteValue);
 	}
@@ -61,7 +66,10 @@ public class ApiController {
 			@RequestParam(value = "excessValue60Days", required = false, defaultValue = "false") boolean excessValue60Days,
 			@RequestParam(value = "excessValue90Days", required = false, defaultValue = "false") boolean excessValue90Days,
 			@RequestParam(value = "obsoleteQty", required = false, defaultValue = "false") boolean obsoleteQty,
-			@RequestParam(value = "obsoleteValue", required = false, defaultValue = "false") boolean obsoleteValue) {
+			@RequestParam(value = "obsoleteValue", required = false, defaultValue = "false") boolean obsoleteValue,
+			HttpServletResponse response
+			) {
+		response.setStatus(HttpStatus.OK.value());
 		return service.findLimit(region, state, plantCode, materialNo, excessQty30Days, excessQty60Days, excessQty90Days, excessValue30Days,
 				excessValue60Days, excessValue90Days, obsoleteQty, obsoleteValue, limit);
 	}

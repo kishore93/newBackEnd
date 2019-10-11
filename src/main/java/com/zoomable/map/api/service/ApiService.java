@@ -1,6 +1,7 @@
 package com.zoomable.map.api.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -140,8 +141,10 @@ public class ApiService {
 		if(Util.isNullOrEmptyorAll(materialNo)) {
 			query.addCriteria(Criteria.where("MaterialNo").is(materialNo));
 		}
-		
-		return template.find(query, InventoryModel.class);
+		System.out.println(Calendar.getInstance().getTimeInMillis());
+		List<InventoryModel> list = template.find(query, InventoryModel.class);
+		System.out.println(Calendar.getInstance().getTimeInMillis());
+		return list;
 	}
 
 	public List<InventoryModel> findLimit(String region, String state, String plantCode, String materialNo, boolean excessQty30Days,
