@@ -56,10 +56,10 @@ Now the Spring Boot application is up and running.
 
 **Start MongoDB server in local:**
 
-_> &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongo&quot; --dbpath &quot;C:\Users\nmukara\git\Mongo Data&quot;
+:arrow_forward: &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongo&quot; --dbpath &quot;C:\Users\nmukara\git\Mongo Data&quot;
 
 **Import data to MongoDB:**
 
-_> &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongoimport&quot; --host localhost --db OSDM --collection Inventory --file &quot;C:\Users\nmukara\Documents\MyJabberFiles\vtavva@cisco.com\data.json&quot;
+:arrow_forward: &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongoimport&quot; --host localhost --db OSDM --collection Inventory --file &quot;C:\Users\nmukara\Documents\MyJabberFiles\vtavva@cisco.com\data.json&quot;
 
 
