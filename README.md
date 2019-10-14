@@ -54,10 +54,12 @@ Now the Spring Boot application is up and running.
 7. Once the application is up and running again un-comment the line **160 if the given suggestion is at the line 160** in the same file.
 8. Open chrome browser and type **localhost:4200** and enter.
 
+**Start MongoDB server in local:**
+
+_> &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongo&quot; --dbpath &quot;C:\Users\nmukara\git\Mongo Data&quot;
+
 **Import data to MongoDB:**
 
-&quot;C:\Program Files\MongoDB\Server\4.2\bin\mongoimport&quot; --host localhost --db OSDM --collection Inventory --file &quot;C:\Users\nmukara\Documents\MyJabberFiles\vtavva@cisco.com\data.json&quot;
+_> &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongoimport&quot; --host localhost --db OSDM --collection Inventory --file &quot;C:\Users\nmukara\Documents\MyJabberFiles\vtavva@cisco.com\data.json&quot;
 
-Start MongoDB server :
 
-&quot;C:\Program Files\MongoDB\Server\4.2\bin\mongo&quot; --dbpath &quot;C:\Users\nmukara\git\Mongo Data&quot;
