@@ -1,6 +1,6 @@
 # OSDM Up &amp; Running
 
-# SCCT Technologies used
+## SCCT Technologies used
 
 **Front end:**
 
@@ -18,9 +18,9 @@
 
 | **S.no** | **Technology used** | **version** |
 | --- | --- | --- |
-| 1 | Java | 1.8 |
-| 2 | Spring Boot | 2.1.5 |
-| 3 | MongoDB | 4.0 |
+| **1** | Java | 1.8 |
+| **2** | Spring Boot | 2.1.5 |
+| **3** | MongoDB | 4.0 |
 
 **Applications need to install in local:**
 
@@ -28,17 +28,17 @@
 2. **Maven**
 3. **Node**
 4. **Angular**
-5. **Install Mongo DB**
+5. **Mongo DB**
 
-OSDM Application Up &amp; Running
+### OSDM Application Up &amp; Running
 
-**Cloning the project from GIT:  ** git clone [https://github.com/kishore93/osdm.git](https://github.com/kishore93/osdm.git)
+**Cloning the project from GIT:** git clone [https://github.com/kishore93/osdm.git](https://github.com/kishore93/osdm.git)
 
-**Running the Spring Boot application in local:       **
+**Running the Spring Boot application in local:**
 
 1. Go to **OSDMBackendAPI** folder and open Command prompt
-2. Type **mvn clean install  -Dmaven.test.skip=true** and enter
-3. Open **Target folder** and open **Command Prompt**
+2. Type **mvn clean install -Dmaven.test.skip=true** and enter
+3. Open **target** folder and open **Command Prompt**
 4. Type **java –jar zoomable-map-data-api-1.0.0.jar** and enter (or) Type **java –jar osdm-spring-boot-app-1.0.0.jar** and enter
 
 Now the Spring Boot application is up and running.
@@ -54,9 +54,7 @@ Now the Spring Boot application is up and running.
 7. Once the application is up and running again un-comment the line **160 if the given suggestion is at the line 160** in the same file.
 8. Open chrome browser and type **localhost:4200** and enter.
 
-
-
-Import data to MongoDB Compass:
+**Import data to MongoDB:**
 
 &quot;C:\Program Files\MongoDB\Server\4.2\bin\mongoimport&quot; --host localhost --db OSDM --collection Inventory --file &quot;C:\Users\nmukara\Documents\MyJabberFiles\vtavva@cisco.com\data.json&quot;
 
