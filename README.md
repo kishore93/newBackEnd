@@ -43,9 +43,7 @@
 
 Now the Spring Boot application is up and running.
 
-<image xlink:href="https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png" height="200" width="200"/>
-
-[ ![Download](https://api.bintray.com/packages/powermock/maven/powermock/images/download.svg) ](https://google.com/)
+[ ![Download](https://drive.google.com/open?id=1VYi6fIIm9hcO-YKGJH6pSBvd584PUBf3) ](<jarfilelocation>)
 
 **Running the Angular application in local:**
 
