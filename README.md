@@ -42,6 +42,12 @@
 4. Type **java –jar zoomable-map-data-api-1.0.0.jar** and enter (or) Type **java –jar osdm-spring-boot-app-1.0.0.jar** and enter
 
 Now the Spring Boot application is up and running.
+```html
+<svg width="200" height="200"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">       
+  <image xlink:href="https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png" height="200" width="200"/>
+</svg>
+```
 
 [ ![Download](https://api.bintray.com/packages/powermock/maven/powermock/images/download.svg) ](https://google.com/)
 
