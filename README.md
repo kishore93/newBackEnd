@@ -43,6 +43,8 @@
 
 Now the Spring Boot application is up and running.
 
+[ ![Download](https://api.bintray.com/packages/powermock/maven/powermock/images/download.svg) ](https://google.com/)
+
 **Running the Angular application in local:**
 
 1. Go to **OSDMDashboard** folder and open Command prompt
